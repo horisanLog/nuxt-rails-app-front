@@ -1,4 +1,6 @@
-export default ({ $axios }) => {
+import { Plugin } from '@nuxt/types'
+
+const accessor: Plugin = ({ $axios }) => {
   // リクエストログ
   $axios.onRequest((config) => {
     console.log(config)
@@ -12,3 +14,5 @@ export default ({ $axios }) => {
     console.log(e.response)
   })
  }
+
+export default accessor
