@@ -1,17 +1,32 @@
 <template>
   <div>
-    <button
-      type="button"
-      name="button"
-      @click="getMsg"
-    >
-      RailsからAPIを取得する
-    </button>
-    <div
-      v-for="(msg, i) in msgs"
-      :key="i"
-    >
-      {{ msg }}
+    <h2>
+      Borrowersテーブルの取得
+    </h2>
+    <table v-if="borrowers.length">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>email</th>
+          <th>created_at</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="(borrower, i) in borrowers"
+          :key="`borrower-${i}`"
+        >
+          <td>{{ borrower.id }}</td>
+          <td>{{ borrower.name }}</td>
+          <td>{{ borrower.email }}</td>
+          <td>{{ dateFormat(borrower.created_at) }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div v-else>
+      ユーザーが取得できませんでした
     </div>
   </div>
 </template>
@@ -20,15 +35,25 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  data () {
-    return {
-      msgs: [] as string[]
-    }
+  // data(){
+  //   return{
+  //     borrowers:[],
+  //   }
+  // },
+  async asyncData({ app }) {
+    // let borrowers = [] as string[]
+    const borrowers = await app.$axios.$get('/api/borrower/borrowers')
+    return { borrowers }
   },
-  methods: {
-    getMsg () {
-      this.$axios.$get('/api/borrower/hello')
-        .then(res => this.msgs.push(res))
+  // 算出プロパティ
+  computed: {
+    dateFormat () {
+      return (date: Date) => {
+        const dateTimeFormat = new Intl.DateTimeFormat(
+          'ja', { dateStyle: 'medium', timeStyle: 'short' }
+        )
+        return dateTimeFormat.format(new Date(date))
+      }
     }
   }
 })
