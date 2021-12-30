@@ -14,20 +14,14 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '@assets/sass/app.css'
-  ],
+  css: ['@assets/sass/app.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    'plugins/axios'
-  ],
+  plugins: ['plugins/axios'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -42,13 +36,37 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/i18n'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: '/'
+  },
+
+  // Doc: https://nuxt-community.github.io/nuxt-i18n/basic-usage.html#nuxt-link
+  i18n: {
+    // 対応言語の指定
+    locales: ['ja', 'en'],
+    // デフォルトで使用する言語を指定
+    defaultLocale: 'ja',
+    // Doc: https://kazupon.github.io/vue-i18n/api/#properties
+    vueI18n: {
+      fallbackLocale: 'ja',
+      // i18nの健康を完全に表示しない(default: false)
+      // silentTranslationWarn: true,
+
+      // フォールバック時に傾向句を発生させる
+      // trueだと警告を発生させない
+      silentFallbackWarn: true,
+      // 翻訳データ
+      messages: {
+        ja: require('./locales/ja.json'),
+        en: require('./locales/en.json')
+      }
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -65,8 +83,8 @@ export default {
         // postcss-preset-env 設定を変更します
         autoprefixer: {
           grid: true
-        },
+        }
       }
     }
-  },
+  }
 }

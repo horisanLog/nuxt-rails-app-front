@@ -13,6 +13,6 @@ const accessor: Plugin = ({ $axios }) => {
   $axios.onError((e) => {
     console.log(e.response)
   })
- }
+}
 
 export default accessor

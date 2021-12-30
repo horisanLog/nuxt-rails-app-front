@@ -1,3 +1,5 @@
+const INLINE_ELEMENTS = require('./node_modules/eslint-plugin-vue/lib/utils/inline-non-void-elements.json')
+
 module.exports = {
   root: true,
   env: {
@@ -12,7 +14,19 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "warn"
+    'no-unused-vars': 'off',
+    'no-console': 'off',
+    'space-in-parens': ['error', 'never'],
+    '@typescript-eslint/no-unused-vars': 'warn',
+    'vue/multi-word-component-names': [
+      'error',
+      {
+        ignores: ['index']
+      }
+    ],
+    'space-before-function-paren': ['error', 'never'],
+    'vue/singleline-html-element-content-newline': ['error', {
+      ignores: ['pre', 'textarea', ...INLINE_ELEMENTS]
+    }]
   }
 }
