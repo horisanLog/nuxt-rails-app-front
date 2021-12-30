@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require('path')
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -98,19 +98,16 @@ export default {
       '@storybook/addon-controls/register',
       '@storybook/addon-docs/register',
       '@storybook/addon-toolbars/register',
-      '@storybook/addon-viewport/register',
+      '@storybook/addon-viewport/register'
     ],
-    stories: [
-      '../components/**/*.stories.mdx',
-      '../components/**/*.stories.@(js|jsx|ts|tsx)',
-    ],
-    webpackFinal: (config) => {
+    stories: ['../components/**/*.stories.mdx', '../components/**/*.stories.@(js|jsx|ts|tsx)'],
+    webpackFinal: config => {
       config.module.rules.push({
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
-        include: path.resolve(__dirname, "../"),
-      });
-      return config;
-    },
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+        include: path.resolve(__dirname, '../')
+      })
+      return config
+    }
   }
 }
