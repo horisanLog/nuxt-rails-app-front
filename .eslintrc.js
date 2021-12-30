@@ -23,6 +23,7 @@ module.exports = {
         ignores: ['index']
       }
     ],
+    'space-before-function-paren': ['error', 'never'],
     'vue/singleline-html-element-content-newline': ['error', {
       ignores: ['pre', 'textarea', ...INLINE_ELEMENTS]
     }]
