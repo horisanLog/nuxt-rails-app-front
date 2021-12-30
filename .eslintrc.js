@@ -1,3 +1,5 @@
+const INLINE_ELEMENTS = require('./node_modules/eslint-plugin-vue/lib/utils/inline-non-void-elements.json')
+
 module.exports = {
   root: true,
   env: {
