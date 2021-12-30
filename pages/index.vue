@@ -24,7 +24,9 @@
     <div v-else>
       ユーザーが取得できませんでした
     </div>
-    <h2 class="hoge">nuxt-i18nの検証</h2>
+    <h2 class="hoge">
+      nuxt-i18nの検証
+    </h2>
     <table v-if="borrowers.length" class="users-table">
       <thead class="head">
         <th>en</th>
