@@ -16,6 +16,7 @@ module.exports = {
   rules: {
     'no-unused-vars': 'off',
     'no-console': 'off',
+    'space-in-parens': ['error', 'never'],
     '@typescript-eslint/no-unused-vars': 'warn',
     'vue/multi-word-component-names': [
       'error',
