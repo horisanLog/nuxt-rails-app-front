@@ -1,3 +1,5 @@
+const path = require("path");
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -86,5 +88,29 @@ export default {
         }
       }
     }
+  },
+
+  storybook: {
+    port: 6006,
+    addons: [
+      '@storybook/addon-actions/register',
+      '@storybook/addon-backgrounds/register',
+      '@storybook/addon-controls/register',
+      '@storybook/addon-docs/register',
+      '@storybook/addon-toolbars/register',
+      '@storybook/addon-viewport/register',
+    ],
+    stories: [
+      '../components/**/*.stories.mdx',
+      '../components/**/*.stories.@(js|jsx|ts|tsx)',
+    ],
+    webpackFinal: (config) => {
+      config.module.rules.push({
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
+        include: path.resolve(__dirname, "../"),
+      });
+      return config;
+    },
   }
 }
