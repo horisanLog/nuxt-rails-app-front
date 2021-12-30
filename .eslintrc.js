@@ -14,10 +14,10 @@ module.exports = {
   rules: {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
-    "vue/multi-word-component-names": [
-      "error",
+    'vue/multi-word-component-names': [
+      'error',
       {
-        "ignores": ["index"]
+        'ignores': ['index']
       }
     ]
   }
