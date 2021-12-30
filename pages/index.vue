@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h2>
+    <h2 class="hoge">
       Borrowersテーブルの取得
     </h2>
-    <table v-if="borrowers.length">
-      <thead>
-        <tr>
+    <table v-if="borrowers.length" class="users-table">
+      <thead class="head">
+        <tr class="row">
           <th>id</th>
           <th>name</th>
           <th>email</th>
@@ -35,13 +35,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  // data(){
-  //   return{
-  //     borrowers:[],
-  //   }
-  // },
   async asyncData({ app }) {
-    // let borrowers = [] as string[]
     const borrowers = await app.$axios.$get('/api/borrower/borrowers')
     return { borrowers }
   },
