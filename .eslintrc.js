@@ -24,7 +24,7 @@ module.exports = {
       }
     ],
     'vue/singleline-html-element-content-newline': ['error', {
-      'ignores': ['pre', 'textarea', ...INLINE_ELEMENTS]
+      ignores: ['pre', 'textarea', ...INLINE_ELEMENTS]
     }]
   }
 }
