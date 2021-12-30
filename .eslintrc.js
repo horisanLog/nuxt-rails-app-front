@@ -18,8 +18,11 @@ module.exports = {
     'vue/multi-word-component-names': [
       'error',
       {
-        'ignores': ['index']
+        ignores: ['index']
       }
-    ]
+    ],
+    'vue/singleline-html-element-content-newline': ['error', {
+      'ignores': ['pre', 'textarea', ...INLINE_ELEMENTS]
+    }]
   }
 }

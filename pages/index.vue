@@ -42,7 +42,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  async asyncData ( { app } ) {
+  async asyncData ({ app }) {
     const borrowers = await app.$axios.$get('/api/borrower/borrowers')
     return { borrowers }
   },
