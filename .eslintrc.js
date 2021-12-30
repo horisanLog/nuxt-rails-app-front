@@ -13,6 +13,7 @@ module.exports = {
   // add your custom rules here
   rules: {
     'no-unused-vars': 'off',
+    'no-console': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
     'vue/multi-word-component-names': [
       'error',

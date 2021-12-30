@@ -42,22 +42,22 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  async asyncData({ app }) {
+  async asyncData ( { app } ) {
     const borrowers = await app.$axios.$get('/api/borrower/borrowers')
     return { borrowers }
   },
   // 算出プロパティ
   computed: {
-    dateFormat() {
+    dateFormat () {
       return (date: Date) => {
         const dateTimeFormat = new Intl.DateTimeFormat('ja', {
           dateStyle: 'medium',
-          timeStyle: 'short',
+          timeStyle: 'short'
         })
         return dateTimeFormat.format(new Date(date))
       }
-    },
-  },
+    }
+  }
 })
 </script>
 
