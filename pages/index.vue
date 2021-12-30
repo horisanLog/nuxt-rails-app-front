@@ -39,12 +39,12 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from "vue"
 
 export default Vue.extend({
   async asyncData({ app }) {
-    const borrowers = await app.$axios.$get("/api/borrower/borrowers");
-    return { borrowers };
+    const borrowers = await app.$axios.$get("/api/borrower/borrowers")
+    return { borrowers }
   },
   // 算出プロパティ
   computed: {
@@ -53,16 +53,16 @@ export default Vue.extend({
         const dateTimeFormat = new Intl.DateTimeFormat("ja", {
           dateStyle: "medium",
           timeStyle: "short",
-        });
-        return dateTimeFormat.format(new Date(date));
-      };
+        })
+        return dateTimeFormat.format(new Date(date))
+      }
     },
   },
-});
+})
 </script>
 
 <style scoped>
 .users-table {
-  border: 2px solid blue;
+  border: 2px solid blue
 }
 </style>
