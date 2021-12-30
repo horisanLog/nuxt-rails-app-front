@@ -7,11 +7,9 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint:prettier": "prettier -c .",
     "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
     "lint": "yarn lint:js",
-    "lintfix": "yarn lint:js --fix",
-    "fix": "yarn lint:prettier -- --write; yarn lint:js -- --fix"
+    "lintfix": "yarn lint:js --fix"
   },
   "dependencies": {
     "@nuxt/postcss8": "^1.1.3",
