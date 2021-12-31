@@ -32,7 +32,9 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
-    '@nuxt/postcss8'
+    '@nuxt/postcss8',
+    // Doc: https://www.npmjs.com/package/@nuxtjs/vuetify
+    '@nuxtjs/vuetify'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -69,6 +71,10 @@ export default {
         en: require('./locales/en.json')
       }
     }
+  },
+
+  publicRuntimeConfig: {
+    appName: process.env.APP_NAME
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
