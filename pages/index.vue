@@ -45,7 +45,7 @@ import HomeProducts from '~/components/organisms/HomeProducts'
 import HomePrice from '~/components/organisms/HomePrice'
 import HomeContact from '~/components/organisms/HomeContact'
 import HomeCompany from '~/components/organisms/HomeCompany'
-import befLoginFooter from '~/components/molecules/BefLoginFooter'
+import BefLoginFooter from '~/components/molecules/BefLoginFooter'
 
 export default {
   components: {
@@ -55,7 +55,7 @@ export default {
     HomePrice,
     HomeContact,
     HomeCompany,
-    befLoginFooter
+    BefLoginFooter
   },
   data() {
     return {

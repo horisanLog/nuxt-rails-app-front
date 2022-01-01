@@ -7,25 +7,60 @@
     :elevation="toolbarStyle.elevation"
   >
     <app-logo @click.native="goTo('scroll-top')" />
-    <v-toolbar-title>
-      {{ appName }}
-    </v-toolbar-title>
+    <app-title
+      class="hidden-mobile-and-down"
+    />
     <v-spacer />
-    <v-toolbar-items class="ml-2">
-      <v-btn v-for="(menu, i) in menus" :key="`menu-btn-${i}`" text @click="goTo(menu.title)">
+    <v-toolbar-items class="ml-2 hidden-ipad-and-down">
+      <v-btn v-for="(menu, i) in menus" :key="`menu-btn-${i}`" text @click="$vuetify.goTo(`#${menu.title}`)">
         {{ $t(`menus.${menu.title}`) }}
       </v-btn>
     </v-toolbar-items>
+    <signup-link />
+    <login-link />
+    <v-menu
+      bottom
+      nudge-left="110"
+      nudge-width="100"
+    >
+      <template v-slot:activator="{ on }">
+        <v-app-bar-nav-icon
+          class="hidden-ipad-and-up"
+          v-on="on"
+        />
+      </template>
+      <v-list
+        dense
+        class="hidden-ipad-and-up"
+      >
+        <v-list-item
+          v-for="(menu, i) in menus"
+          :key="`menu-list-${i}`"
+          exact
+          @click="$vuetify.goTo(`#${menu.title}`)"
+        >
+          <v-list-item-title>
+            {{ $t(`menus.${menu.title}`) }}
+          </v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
   </v-app-bar>
 </template>
 
 <script>
-import AppLogo from '~/components/ui/appLogo'
+import AppLogo from '~/components/ui/AppLogo'
+import SignupLink from '~/components/atoms/SignupLink'
+import LoginLink from '~/components/atoms/LoginLink'
+import AppTitle from '~/components/atoms/AppTitle'
 
 export default {
   // data (context: { $config: { appName: "Value" } })
   components: {
-    AppLogo
+    AppLogo,
+    SignupLink,
+    LoginLink,
+    AppTitle
   },
   props: {
     menus: {
@@ -37,9 +72,8 @@ export default {
       default: 0
     }
   },
-  data({ $config: { appName }, $store }) {
+  data({ $store }) {
     return {
-      appName,
       scrollY: 0,
       appBarHeight: $store.state.styles.beforeLogin.appBarHeight
     }
@@ -65,10 +99,9 @@ export default {
     onScroll() {
       this.scrollY = window.scrollY
     },
-    goTo (id) {
+    goTo(id) {
       this.$vuetify.goTo(`#${id}`)
     }
   }
 }
 </script>
-
