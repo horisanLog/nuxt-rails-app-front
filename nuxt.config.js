@@ -57,6 +57,7 @@ export default {
     // デフォルトで使用する言語を指定
     defaultLocale: 'ja',
     // Doc: https://kazupon.github.io/vue-i18n/api/#properties
+    strategy: 'no_prefix',
     vueI18n: {
       fallbackLocale: 'ja',
       // i18nの健康を完全に表示しない(default: false)
@@ -114,6 +115,24 @@ export default {
         include: path.resolve(__dirname, '../')
       })
       return config
+    }
+  },
+
+  vuetify: {
+    treeShake: true,
+    customVariables: ['~/assets/sass/variables.scss'],
+    theme: {
+      themes: {
+        light: {
+          primary: '4080BE',
+          info: '4FC1E9',
+          success: '44D69E',
+          warning: 'FEB65E',
+          error: 'FB8678',
+          background: 'f6f6f4',
+          myblue: '1867C0'
+        }
+      }
     }
   }
 }

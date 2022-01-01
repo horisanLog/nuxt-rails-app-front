@@ -8,7 +8,8 @@ module.exports = {
   },
   extends: [
     '@nuxtjs/eslint-config-typescript',
-    'plugin:nuxt/recommended'
+    'plugin:nuxt/recommended',
+    'plugin:vue/vue3-recommended'
   ],
   plugins: [
   ],
@@ -28,6 +29,9 @@ module.exports = {
     'space-before-function-paren': ['error', 'never'],
     'vue/singleline-html-element-content-newline': ['error', {
       ignores: ['pre', 'textarea', ...INLINE_ELEMENTS]
-    }]
+    }],
+    'vue/valid-v-slot': ['error', {
+      allowModifiers: true,
+    }],
   }
 }
