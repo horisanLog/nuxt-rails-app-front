@@ -8,10 +8,17 @@
 
       <!-- OR -->
       <!-- 親にsync修飾子を使った場合、データの送受信を一度に行える -->
-      <user-form-name :name.sync="params.user.name" />
-      <user-form-email :email.sync="params.user.email" />
-      <user-form-password :password.sync="params.user.password" />
-      <v-btn :disabled="!isValid || loading" :loading="loading" block color="myblue" class="white--text" @click="signup">
+      <user-form-name v-model:name="params.user.name" />
+      <user-form-email v-model:email="params.user.email" />
+      <user-form-password v-model:password="params.user.password" />
+      <v-btn
+        :disabled="!isValid || loading"
+        :loading="loading"
+        block
+        color="myblue"
+        class="white--text"
+        @click="signup"
+      >
         登録する
       </v-btn>
     </v-form>
