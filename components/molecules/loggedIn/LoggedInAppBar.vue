@@ -23,7 +23,7 @@ export default {
     AppTitle,
     LoggedInAppBarAccountMenu
   },
-  props:{
+  props: {
     clippedLeft: {
       type: Boolean,
       default: false

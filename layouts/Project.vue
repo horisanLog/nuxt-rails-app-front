@@ -8,7 +8,7 @@
     </logged-in-app-bar>
 
     <!-- navigation drawer -->
-    <project-navigation-drawer :drawer.sync="drawer" />
+    <project-navigation-drawer v-model:drawer="drawer" />
 
     <!-- main content -->
     <v-main>
