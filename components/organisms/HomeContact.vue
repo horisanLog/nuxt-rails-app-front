@@ -78,7 +78,7 @@
       color="primary"
     >
       お問合せ内容が送信されました。メールアドレスへ担当者よりご連絡いたします。
-      <template v-slot:action="{ attrs }">
+      <template #action="{ attrs }">
         <v-btn
           color="white"
           text
@@ -94,7 +94,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       isValid: false,
       name: '',
@@ -115,14 +115,14 @@ export default {
     }
   },
   methods: {
-    onSend () {
+    onSend() {
       this.loading = true
       setTimeout(() => {
         this.loading = false
         this.sentIt = true
       }, 1500)
     },
-    formReset () {
+    formReset() {
       this.sentIt = false
       this.$refs.contact.reset()
     }

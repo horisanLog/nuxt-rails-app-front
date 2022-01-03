@@ -66,7 +66,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     const payments = [
       { label: 'month', color: 'indigo' },
       { label: 'year', color: 'myblue' }
@@ -109,7 +109,7 @@ export default {
     }
   },
   computed: {
-    yen () {
+    yen() {
       return (val) => {
         return String(val).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,')
       }

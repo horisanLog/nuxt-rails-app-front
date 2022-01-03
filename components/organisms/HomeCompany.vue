@@ -104,7 +104,7 @@ import member2 from '~/assets/images/member2.png'
 import member3 from '~/assets/images/member3.png'
 
 export default {
-  data () {
+  data() {
     const twitter = 'https://twitter.com/esegrammer'
     const slack = 'https://join.slack.com/t/dokugaku-kai/shared_invite/zt-a5j1suoh-Y0fspHbo1fb0Wj6YTpDdXA'
     const companyUrl = 'http://blog.cloud-acct.com'

@@ -31,7 +31,7 @@ module.exports = {
       ignores: ['pre', 'textarea', ...INLINE_ELEMENTS]
     }],
     'vue/valid-v-slot': ['error', {
-      allowModifiers: true,
-    }],
+      allowModifiers: true
+    }]
   }
 }

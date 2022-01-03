@@ -35,7 +35,7 @@
       <tbody>
         <tr v-for="(path, i) in ['signup', 'login']" :key="`path-${i}`">
           <td>{{ path }}</td>
-          <td>{{ $t(`title.${path}`) }}</td>
+          <td>{{ $my.pageTitle(`title.${path}`) }}</td>
         </tr>
       </tbody>
     </table>

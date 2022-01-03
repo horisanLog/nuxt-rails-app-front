@@ -21,7 +21,7 @@ export default {
       default: ''
     }
   },
-  data () {
+  data() {
     const max = 30
     return {
       max,
@@ -33,10 +33,10 @@ export default {
   },
   computed: {
     setName: {
-      get () {
+      get() {
         return this.name
       },
-      set (newValue) {
+      set(newValue) {
         return this.$emit('update:name', newValue)
       }
     }

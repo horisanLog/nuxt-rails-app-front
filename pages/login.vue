@@ -42,17 +42,14 @@ export default {
     return {
       isValid: false,
       loading: false,
-      params: { auth: { email: '', password: '' } }
+      params: { auth: { email: '', password: '' } },
+      redirectPath: $store.state.loggedIn.homePath
     }
   },
   methods: {
     login () {
       this.loading = true
-      setTimeout(() => {
-        this.$store.dispatch('login')
-        this.$router.replace('/')
-        this.loading = false
-      }, 1500)
+      this.$router.push(this.redirectPath)
     }
   }
 }

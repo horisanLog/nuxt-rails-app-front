@@ -51,7 +51,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       blogUrl: 'https://blog.cloud-acct.com/categories/udemy',
       technologies: [

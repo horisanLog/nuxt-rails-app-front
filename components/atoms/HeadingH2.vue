@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h2 :class="className">{{ title }}</h2>
+    <h2 :class="className">
+      {{ title }}
+    </h2>
   </div>
 </template>
 
@@ -50,4 +52,3 @@ export default {
   }
 }
 </style>
-
