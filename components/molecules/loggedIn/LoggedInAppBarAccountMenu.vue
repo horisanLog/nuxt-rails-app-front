@@ -1,6 +1,6 @@
 <template>
   <v-menu app offset-x offset-y max-width="200">
-    <template v-slot:activator="{ on }">
+    <template #activator="{ on }">
       <v-btn icon v-on="on">
         <v-icon> mdi-account-circle </v-icon>
       </v-btn>
@@ -39,7 +39,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       menus: [
         { name: 'account-settings', icon: 'mdi-account-cog' },

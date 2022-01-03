@@ -1,8 +1,8 @@
 <template>
   <bef-login-form-card #user-form-card-content>
     <v-form ref="form" v-model="isValid">
-      <user-form-email :email.sync="params.auth.email" no-validation />
-      <user-form-password :password.sync="params.auth.password" no-validation />
+      <user-form-email v-model:email="params.auth.email" no-validation />
+      <user-form-password v-model:password="params.auth.password" no-validation />
 
       <v-card-actions>
         <nuxt-link to="#" class="body-2 text-decoration-none">
@@ -25,7 +25,6 @@
   </bef-login-form-card>
 </template>
 
-
 <script>
 import BefLoginFormCard from '~/components/molecules/BefLoginFormCard'
 import UserFormEmail from '~/components/atoms/user/UserFormEmail'
@@ -47,7 +46,7 @@ export default {
     }
   },
   methods: {
-    login () {
+    login() {
       this.loading = true
       this.$router.push(this.redirectPath)
     }

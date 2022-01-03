@@ -7,7 +7,7 @@
 <script>
 export default {
   layout: 'LoggedIn',
-  validate ({ route }) {
+  validate({ route }) {
     return route.name !== 'account'
   }
 }

@@ -28,7 +28,9 @@
                       <v-icon size="24" color="myblue" class="my-2">
                         mdi-plus
                       </v-icon>
-                      <div class="caption myblue--text">プロジェクトを追加</div>
+                      <div class="caption myblue--text">
+                        プロジェクトを追加
+                      </div>
                     </div>
                   </v-btn>
                 </v-col>
@@ -52,7 +54,9 @@
                       {{ project.name }}
                     </v-card-title>
                     <v-card-text class="caption">
-                      <v-icon size="14"> mdi-update </v-icon>
+                      <v-icon size="14">
+                        mdi-update
+                      </v-icon>
                       {{ $my.dateFormat(project.updatedAt) }}
                     </v-card-text>
                   </v-card>
@@ -78,7 +82,7 @@
             item-key="id"
             hide-default-footer
           >
-            <template v-slot:item.name="{ item }">
+            <template #item.name="{ item }">
               <nuxt-link
                 :to="$my.projectLinkTo(item.id)"
                 class="text-decoration-none"
@@ -86,7 +90,7 @@
                 {{ item.name }}
               </nuxt-link>
             </template>
-            <template v-slot:item.updatedAt="{ item }">
+            <template #item.updatedAt="{ item }">
               {{ $my.dateFormat(item.updatedAt) }}
             </template>
           </v-data-table>

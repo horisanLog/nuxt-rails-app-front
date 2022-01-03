@@ -1,5 +1,5 @@
 class MyInject {
-  constructor (ctx) {
+  constructor(ctx) {
     this.app = ctx.app
   }
 
@@ -11,7 +11,7 @@ class MyInject {
   }
 
   // 日付のフォーマット
-  dateFormat (dateStr) {
+  dateFormat(dateStr) {
     const dateTimeFormat = new Intl.DateTimeFormat(
       'ja', { dateStyle: 'medium', timeStyle: 'short' }
     )
@@ -19,7 +19,7 @@ class MyInject {
   }
 
   // プロジェクトリンク
-  projectLinkTo (id, name = 'project-id-dashboard') {
+  projectLinkTo(id, name = 'project-id-dashboard') {
     return { name, params: { id } }
   }
 }
