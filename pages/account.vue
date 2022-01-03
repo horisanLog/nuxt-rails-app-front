@@ -1,13 +1,12 @@
 <template>
   <v-container>
-    <v-btn 
+    <v-btn
       v-if="!!currentProject"
       small
       plain
       color="primary"
       :to="$my.projectLinkTo(currentProject.id, dashboardPath)"
     >
-
       <v-icon left>
         mdi-chevron-double-left
       </v-icon>
