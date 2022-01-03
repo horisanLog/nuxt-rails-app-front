@@ -34,8 +34,18 @@ export const getter = {
 
 // stateの値を変更する場所
 export const mutations = {
-
+  setCurrentProject(state, payload) {
+    state.project.current = payload
+  }
 }
 
 // メソッド
-export const actions = {}
+export const actions = {
+  // { state, getter, commit, dispatch, rootState, rootGetters}
+  // rootState => ルート(store/index.js)のstateを取得(rootState = state)
+  getCurrentProject({ state, commit }, params) {
+    const id = Number(params.id)
+    const currentProject = state.project.list.find(project => project.id === id) || null
+    commit('setCurrentProject', currentProject)
+  }
+}
