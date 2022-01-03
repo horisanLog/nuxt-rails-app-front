@@ -1,6 +1,6 @@
 <template>
   <bef-login-form-card #user-form-card-content>
-    <v-form ref="form" v-model="isValid">
+    <v-form ref="form" v-model="isValid" @submit.prevent="signup">
       <!-- <user-form-name
         :name="name"
         @input="name = $event"
@@ -12,12 +12,12 @@
       <user-form-email v-model:email="params.user.email" />
       <user-form-password v-model:password="params.user.password" />
       <v-btn
+        type="submit"
         :disabled="!isValid || loading"
         :loading="loading"
         block
         color="myblue"
         class="white--text"
-        @click="signup"
       >
         登録する
       </v-btn>
