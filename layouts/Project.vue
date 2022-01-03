@@ -20,12 +20,15 @@
 <script>
 import LoggedInAppBar from '~/components/molecules/loggedIn/LoggedInAppBar'
 import ProjectNavigationDrawer from '~/components/molecules/project/ProjectNavigationDrawer'
+import GetProjectCurrent from '~/middleware/GetProjectCurrent'
 
 export default {
   components: {
     LoggedInAppBar,
-    ProjectNavigationDrawer
+    ProjectNavigationDrawer,
+    GetProjectCurrent
   },
+  middleware: 'GetProjectCurrent',
   data() {
     return {
       drawer: null
