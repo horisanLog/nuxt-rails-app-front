@@ -1,5 +1,6 @@
 <template>
-  <v-app-bar app dense elevation="1" clipped-left color="white">
+  <v-app-bar app dense elevation="1" :clipped-left="clippedLeft" color="white">
+    <slot name="navigation-toggle-button" />
     <nuxt-link :to="homePath" class="text-decoration-none">
       <app-logo />
     </nuxt-link>
@@ -21,6 +22,12 @@ export default {
     AppLogo,
     AppTitle,
     LoggedInAppBarAccountMenu
+  },
+  props:{
+    clippedLeft: {
+      type: Boolean,
+      default: false
+    }
   },
   data({ $store }) {
     return {

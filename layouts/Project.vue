@@ -1,6 +1,16 @@
 <template>
   <v-app>
-    <logged-in-app-bar />
+    <!-- toolbar -->
+    <logged-in-app-bar clipped-left>
+      <template #navigation-toggle-button>
+        <v-app-bar-nav-icon @click="drawer = !drawer" />
+      </template>
+    </logged-in-app-bar>
+
+    <!-- navigation drawer -->
+    <project-navigation-drawer :drawer.sync="drawer" />
+
+    <!-- main content -->
     <v-main>
       <nuxt />
     </v-main>
@@ -9,10 +19,17 @@
 
 <script>
 import LoggedInAppBar from '~/components/molecules/loggedIn/LoggedInAppBar'
+import ProjectNavigationDrawer from '~/components/molecules/project/ProjectNavigationDrawer'
 
 export default {
   components: {
-    LoggedInAppBar
+    LoggedInAppBar,
+    ProjectNavigationDrawer
+  },
+  data() {
+    return {
+      drawer: null
+    }
   }
 }
 </script>
