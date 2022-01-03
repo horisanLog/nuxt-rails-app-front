@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <bef-login-app-bar />
+    <logged-in-app-bar />
     <v-main>
       <nuxt />
     </v-main>
@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import BefLoginAppBar from '~/components/molecules/BefLoginAppBar'
+import LoggedInAppBar from '~/components/molecules/loggedIn/LoggedInAppBar'
 import BefLoginFooter from '~/components/molecules/BefLoginFooter'
 
 export default {
   components: {
-    BefLoginAppBar,
+    LoggedInAppBar,
     BefLoginFooter
   }
 }

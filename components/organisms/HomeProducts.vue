@@ -48,7 +48,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     const gradients = [
       ['#222'],
       ['#42b3f4'],

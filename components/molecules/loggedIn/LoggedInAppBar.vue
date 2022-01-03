@@ -1,0 +1,34 @@
+<template>
+  <v-app-bar app dense elevation="1" clipped-left color="white">
+    <nuxt-link :to="homePath" class="text-decoration-none">
+      <app-logo />
+    </nuxt-link>
+
+    <app-title />
+
+    <v-spacer />
+    <logged-in-app-bar-account-menu />
+  </v-app-bar>
+</template>
+
+<script>
+import AppLogo from '~/components/ui/AppLogo'
+import AppTitle from '~/components/atoms/AppTitle'
+import LoggedInAppBarAccountMenu from '~/components/molecules/loggedIn/LoggedInAppBarAccountMenu'
+
+export default {
+  components: {
+    AppLogo,
+    AppTitle,
+    LoggedInAppBarAccountMenu
+  },
+  data({ $store }) {
+    return {
+      homePath: $store.state.loggedIn.homePath
+    }
+    // loggedInに変更
+    // return store.state.loggedIn ? 'loggedIn' : 'welcome'
+    // return store.state.loggedIn ? 'default' : 'welcome'
+  }
+}
+</script>

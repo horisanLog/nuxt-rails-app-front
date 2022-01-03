@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import LoginLink from '~/components/atoms/LoginLink'
-import SignupLink from '~/components/atoms/SignupLink'
+import LoginLink from '~/components/atoms/beforeLogin/LoginLink'
+import SignupLink from '~/components/atoms/beforeLogin/SignupLink'
 import AppTitle from '~/components/atoms/AppTitle'
 import AppLogo from '~/components/ui/AppLogo'
 
@@ -35,7 +35,7 @@ export default {
     AppTitle,
     AppLogo
   },
-  data ({ $store }) {
+  data({ $store }) {
     return {
       appBarHeight: $store.state.styles.beforeLogin.appBarHeight
     }

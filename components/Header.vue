@@ -12,9 +12,9 @@
         <h1>Acme</h1>
       </div>
       <div>
-        <my-button size="small" @onClick="onLogout" label="Log out" v-if="user" />
-        <my-button size="small" @onClick="onLogin" label="Log in" v-if="!user" />
-        <my-button primary size="small" @onClick="onCreateAccount" label="Sign up" v-if="!user" />
+        <my-button v-if="user" size="small" label="Log out" @onClick="onLogout" />
+        <my-button v-if="!user" size="small" label="Log in" @onClick="onLogin" />
+        <my-button v-if="!user" primary size="small" label="Sign up" @onClick="onCreateAccount" />
       </div>
     </div>
   </header>
@@ -25,7 +25,7 @@ import './header.css'
 import MyButton from './Button.vue'
 
 export default {
-  name: 'my-header',
+  name: 'MyHeader',
 
   components: { MyButton },
 

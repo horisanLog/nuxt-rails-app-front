@@ -23,7 +23,7 @@
       nudge-left="110"
       nudge-width="100"
     >
-      <template v-slot:activator="{ on }">
+      <template #activator="{ on }">
         <v-app-bar-nav-icon
           class="hidden-ipad-and-up"
           v-on="on"
@@ -50,8 +50,8 @@
 
 <script>
 import AppLogo from '~/components/ui/AppLogo'
-import SignupLink from '~/components/atoms/SignupLink'
-import LoginLink from '~/components/atoms/LoginLink'
+import SignupLink from '~/components/atoms/beforeLogin/SignupLink'
+import LoginLink from '~/components/atoms/beforeLogin/LoginLink'
 import AppTitle from '~/components/atoms/AppTitle'
 
 export default {
@@ -92,7 +92,7 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.onScroll)
   },
-  beforeDestroy() {
+  beforeUnmount() {
     window.removeEventListener('scroll', this.onScroll)
   },
   methods: {

@@ -20,7 +20,7 @@ export default {
       default: false
     }
   },
-  data () {
+  data() {
     return {
       rules: [
         v => !!v || '',
@@ -30,14 +30,14 @@ export default {
   },
   computed: {
     setEmail: {
-      get () {
+      get() {
         return this.email
       },
-      set (newValue) {
+      set(newValue) {
         return this.$emit('update:email', newValue)
       }
     },
-    form () {
+    form() {
       const placeholder = this.noValidation ? undefined : 'your@email.com'
       return { placeholder }
     }

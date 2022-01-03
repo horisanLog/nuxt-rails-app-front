@@ -21,18 +21,19 @@
 
 <script>
 export default {
-  data ({ $config: { appName } }) {
+  data({ $config: { appName } }) {
     return {
       appName,
       height: 32
     }
   },
   computed: {
-    copyRightYear () {
+    copyRightYear() {
       const beginningYear = 2020
       const thisYear = new Date().getFullYear()
       return (beginningYear < thisYear)
-        ? `${beginningYear} - ${thisYear}` : beginningYear
+        ? `${beginningYear} - ${thisYear}`
+        : beginningYear
     }
   }
 }
